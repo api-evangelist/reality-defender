@@ -1,0 +1,48 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.realitydefender.com/sdks/quickstart
+packages:
+  - language: javascript
+    registry: npm
+    name: "@realitydefender/realitydefender"
+    url: https://www.npmjs.com/package/@realitydefender/realitydefender
+    install: npm install @realitydefender/realitydefender
+    version: 0.1.17
+    repo: https://github.com/Reality-Defender/realitydefender-sdk-typescript
+    license: Apache-2.0
+    official: true
+  - language: python
+    registry: pypi
+    name: realitydefender
+    url: https://pypi.org/project/realitydefender/
+    install: pip install realitydefender
+    version: 0.1.11
+    repo: https://github.com/Reality-Defender/realitydefender-sdk-python
+    license: Apache-2.0
+    official: true
+  - language: rust
+    registry: crates.io
+    name: realitydefender
+    url: https://crates.io/crates/realitydefender
+    install: cargo add realitydefender
+    version: 0.1.9
+    repo: https://github.com/Reality-Defender/realitydefender-sdk-rust
+    license: Apache-2.0
+    official: true
+  - language: java
+    registry: maven-central
+    name: "ai.realitydefender:realitydefender-sdk"
+    url: https://central.sonatype.com/artifact/ai.realitydefender/realitydefender-sdk
+    install: "implementation 'ai.realitydefender:realitydefender-sdk:[0.1.0,0.2)'"
+    repo: https://github.com/Reality-Defender/realitydefender-sdk-java
+    license: Apache-2.0
+    notes: Requires Java 11+. A realitydefender-sdk-minimal artifact exists for dependency-conflict cases.
+    official: true
+  - language: go
+    registry: pkg.go.dev
+    name: github.com/Reality-Defender/realitydefender-sdk-go
+    url: https://pkg.go.dev/github.com/Reality-Defender/realitydefender-sdk-go
+    install: go get github.com/Reality-Defender/realitydefender-sdk-go
+    repo: https://github.com/Reality-Defender/realitydefender-sdk-go
+    license: Apache-2.0
+    official: true

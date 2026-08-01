@@ -1,0 +1,35 @@
+generated: '2026-07-20'
+method: derived
+format: http-status
+source: >
+  Derived from the documented X-API-KEY authentication and standard REST
+  behavior of the detection API (https://docs.realitydefender.com/api-reference).
+  No published application/problem+json error reference was found; titles and
+  remediation below are conservative HTTP-status derivations, not a provider
+  error registry.
+envelope: Standard HTTP status codes; JSON body. No RFC 9457 problem+json documented.
+problems:
+  - status: 400
+    title: Bad request
+    cause: Malformed request body or unsupported media reference.
+    remediation: Validate the request payload and supported input types (image, video, audio, text, social URL).
+  - status: 401
+    title: Unauthorized
+    cause: Missing or invalid X-API-KEY header.
+    remediation: Supply a valid API key from https://app.realitydefender.ai platform settings.
+  - status: 403
+    title: Forbidden
+    cause: API key lacks access to the requested resource or feature.
+    remediation: Confirm the account/plan entitlements for the requested detection capability.
+  - status: 404
+    title: Not found
+    cause: Unknown request_id or media resource.
+    remediation: Confirm the request_id returned at submission time; results may not yet exist.
+  - status: 429
+    title: Too many requests
+    cause: Rate limit exceeded.
+    remediation: Back off and retry; the async submit-then-poll flow should space polling.
+  - status: 500
+    title: Internal server error
+    cause: Unexpected server-side failure.
+    remediation: Retry with backoff; contact support if persistent.

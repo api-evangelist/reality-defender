@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.realitydefender.com/api-reference/quickstart
+docs: https://docs.realitydefender.com/api-reference/quickstart
+summary:
+  types: [apiKey, oauth2, openIdConnect]
+  api_key_in: [header]
+  api_key_name: X-API-KEY
+  oauth2_flows: [authorizationCode, deviceCode, clientCredentials]
+schemes:
+  - name: ApiKeyAuth
+    type: apiKey
+    in: header
+    parameter_name: X-API-KEY
+    applies_to: Reality Defender detection REST API (api.prd.realitydefender.xyz)
+    key_source: Generated in the Reality Defender platform settings at https://app.realitydefender.ai
+    notes: >
+      Primary authentication for all detection endpoints and the SDKs.
+      SDKs read the key from a REALITY_DEFENDER_API_KEY environment variable;
+      the MCP server accepts it via env or a per-request X-Api-Key header.
+  - name: PlatformOIDC
+    type: openIdConnect
+    openIdConnectUrl: https://auth.app.realitydefender.ai/.well-known/openid-configuration
+    issuer: https://auth.app.realitydefender.ai/
+    applies_to: End-user sign-in to the Reality Defender web platform (Auth0 tenant)
+    flows_supported: [authorizationCode, deviceCode, clientCredentials, implicit]
+    scopes_supported: [openid, profile, email, offline_access, phone, address]
+    pkce: [S256, plain]
+    notes: >
+      This OAuth2/OIDC surface authenticates humans into the console; it does not
+      issue tokens for the detection API, which uses the X-API-KEY scheme above.

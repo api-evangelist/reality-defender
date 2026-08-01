@@ -1,0 +1,40 @@
+generated: '2026-07-20'
+method: derived
+source: >
+  Derived from the documented REST endpoints and MCP tools
+  (https://docs.realitydefender.com/api-reference). No OpenAPI schema is
+  published; entities and relationships are inferred from endpoint semantics.
+entities:
+  - name: Upload
+    description: A media submission slot obtained via a pre-signed AWS URL or a social-media URL.
+    created_by: POST /api/files/aws-presigned, POST /api/files/social
+    key: request_id
+  - name: Media
+    description: An uploaded/queued media item (image, video, audio, text, or social URL) undergoing analysis.
+    key: request_id
+  - name: DetectionResult
+    description: The ensemble deepfake/manipulation verdict and per-model scores for a media item.
+    read_by: GET /api/media/users/{request_id}
+    fields_note: Interpret the "ensemble" result as the top-level verdict.
+  - name: Model
+    description: An individual detection model whose score contributes to the ensemble result.
+  - name: Feedback
+    description: User feedback on a detection result.
+    created_by: create_user_feedback
+relationships:
+  - from: Upload
+    to: Media
+    type: has_one
+    via: request_id
+  - from: Media
+    to: DetectionResult
+    type: has_one
+    via: request_id
+  - from: DetectionResult
+    to: Model
+    type: has_many
+    via: models/ensemble
+  - from: Feedback
+    to: DetectionResult
+    type: belongs_to
+    via: request_id

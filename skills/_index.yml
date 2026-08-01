@@ -1,0 +1,10 @@
+generated: '2026-07-20'
+method: generated
+source: https://docs.realitydefender.com/api-reference/quickstart
+skills:
+  - file: reality-defender-detect-media.md
+    name: Detect a deepfake in a media file
+    api: https://docs.realitydefender.com/api-reference/quickstart
+    operations:
+      - POST /api/files/aws-presigned
+      - GET /api/media/users/{request_id}

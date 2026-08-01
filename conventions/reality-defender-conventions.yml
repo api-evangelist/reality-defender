@@ -1,0 +1,42 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.realitydefender.com/api-reference/quickstart
+base_url: https://api.prd.realitydefender.xyz
+authentication:
+  style: api-key-header
+  header: X-API-KEY
+  ref: authentication/reality-defender-authentication.yml
+interaction_model:
+  pattern: async-submit-then-poll
+  description: >
+    Detection is asynchronous. A client requests a pre-signed upload URL
+    (POST /api/files/aws-presigned) or submits a social media URL
+    (POST /api/files/social), uploads/queues the media, then polls
+    GET /api/media/users/{request_id} until the ensemble result is ready.
+  webhooks: not-documented
+idempotency:
+  supported: false
+  notes: >
+    No idempotency-key header or contract is documented. Submissions return a
+    request_id used for correlation, but retries are not deduplicated by a
+    client-supplied key.
+pagination:
+  supported: true
+  surface: GET all-media listing endpoint
+  notes: A list endpoint (All Media) exists; explicit pagination parameters are not published in the public reference.
+media_types:
+  request: application/json
+  supported_inputs: [image, video, audio, text, social-media-url]
+versioning:
+  scheme: unversioned-path
+  notes: >
+    The REST paths carry no version segment. SDKs are versioned with SemVer
+    (see packages/reality-defender-packages.yml).
+error_envelope:
+  ref: errors/reality-defender-problem-types.yml
+  notes: Standard HTTP status codes; no application/problem+json envelope documented.
+cross_links:
+  authentication: authentication/reality-defender-authentication.yml
+  errors: errors/reality-defender-problem-types.yml
+  lifecycle: lifecycle/reality-defender-lifecycle.yml
+  data_model: data-model/reality-defender-data-model.yml

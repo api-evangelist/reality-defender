@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: derived
+source: >
+  Derived from documented auth (X-API-KEY), the Auth0 platform OIDC discovery,
+  and the REST reference at https://docs.realitydefender.com/api-reference/quickstart
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: Platform login exposes an RFC 6749 OAuth2 authorization server (auth.app.realitydefender.ai)
+  - id: oidc
+    conforms: true
+    evidence: /.well-known/openid-configuration present on the platform auth tenant
+  - id: rfc8414-oauth-metadata
+    conforms: true
+    evidence: /.well-known/oauth-authorization-server returns 200
+  - id: api-key-auth
+    conforms: true
+    evidence: Detection API authenticates via X-API-KEY header
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: No application/problem+json error envelope documented
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: No /.well-known/security.txt served on primary hosts (404)
+  - id: pagination
+    conforms: partial
+    evidence: A list (All Media) endpoint exists; pagination params not published
+  - id: idempotency
+    conforms: false
+    evidence: No idempotency-key contract documented

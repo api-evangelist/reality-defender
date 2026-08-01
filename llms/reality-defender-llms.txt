@@ -1,0 +1,17 @@
+# Reality Defender
+
+## Docs
+
+- [Create User Feedback](https://docs.realitydefender.com/api-reference/endpoint/create_user_feedback.md)
+- [All Media](https://docs.realitydefender.com/api-reference/endpoint/get_all_media.md)
+- [Media Detail](https://docs.realitydefender.com/api-reference/endpoint/get_media_detail.md)
+- [AWS Presigned URL](https://docs.realitydefender.com/api-reference/endpoint/presigned.md)
+- [Social Media URL Upload](https://docs.realitydefender.com/api-reference/endpoint/social.md)
+- [Quickstart](https://docs.realitydefender.com/api-reference/quickstart.md): Getting started with our API for deepfake detection
+- [Introduction](https://docs.realitydefender.com/introduction.md): Welcome to Reality Defender's Documentation Portal
+- [Reality Defender SDK](https://docs.realitydefender.com/sdks/quickstart.md): The Reality Defender SDK provides tools and libraries for detecting deepfakes and manipulated media through the Reality Defender API. This SDK is available in multiple programming languages to fit your development needs.
+
+## Optional
+
+- [Documentation](https://docs.realitydefender.com)
+- [Blog](https://www.realitydefender.com/blog)

@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+source: probed /.well-known/ across Reality Defender hosts
+hosts:
+  - host: https://auth.app.realitydefender.ai
+    documents:
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: reality-defender-openid-configuration.json
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: reality-defender-oauth-authorization-server.json
+  - host: https://api.prd.realitydefender.xyz
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+  - host: https://www.realitydefender.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://docs.realitydefender.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+notes: >
+  The auth.app.realitydefender.ai tenant (Auth0-hosted platform login for
+  app.realitydefender.ai) publishes OIDC + RFC 8414 discovery. This is the
+  end-user platform sign-in, distinct from the deepfake-detection REST API,
+  which authenticates with an X-API-KEY header rather than OAuth.

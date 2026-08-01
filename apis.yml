@@ -1,7 +1,29 @@
 aid: reality-defender
 name: Reality Defender
-description: Reality Defender is a company surfaced as a portfolio company of dcvc and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Reality Defender is an enterprise deepfake and AI-generated media detection
+  platform that identifies manipulated images, video, audio, and text across
+  calls, meetings, onboarding, and access workflows in real time. Its detection
+  API accepts uploaded media or social-media URLs and returns an ensemble
+  verdict aggregating multiple purpose-built detection models, letting platforms,
+  financial institutions, and governments block deepfakes before they authorize
+  payments, spread disinformation, or deceive AI agents. Reality Defender ships
+  official SDKs for TypeScript, Python, Go, Rust, and Java, an open-source MCP
+  server for agent integrations, and a Slack app. It was surfaced as a portfolio
+  company of DCVC.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.datocms-assets.com/157377/1744045826-og-image.jpg?auto=format&fit=max&w=1200
 url: https://raw.githubusercontent.com/api-evangelist/reality-defender/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +33,102 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Deepfake Detection
+- Artificial Intelligence
+- Media Authentication
+- Content Moderation
+- Security
+- Fraud Prevention
+- Synthetic Media
+- Machine Learning
+apis:
+- name: Reality Defender Detection API
+  description: >-
+    Asynchronous REST API for deepfake and manipulated-media detection. Request a
+    pre-signed upload URL or submit a social-media URL, then poll for an ensemble
+    detection verdict across image, video, audio, and text inputs.
+  humanURL: https://docs.realitydefender.com/api-reference/quickstart
+  baseURL: https://api.prd.realitydefender.xyz
+  tags:
+  - Deepfake Detection
+  - Media
+  - Detection
+  properties:
+  - type: Documentation
+    url: https://docs.realitydefender.com/api-reference/quickstart
+  - type: Authentication
+    url: authentication/reality-defender-authentication.yml
+  - type: Conventions
+    url: conventions/reality-defender-conventions.yml
+  - type: ErrorCatalog
+    url: errors/reality-defender-problem-types.yml
+  - type: DataModel
+    url: data-model/reality-defender-data-model.yml
+  - type: Conformance
+    url: conformance/reality-defender-conformance.yml
+common:
+- type: DomainSecurity
+  url: security/reality-defender-domain-security.yml
+- type: Website
+  url: https://www.realitydefender.com
+- type: DeveloperPortal
+  url: https://docs.realitydefender.com/
+- type: Documentation
+  url: https://docs.realitydefender.com/
+- type: APIReference
+  url: https://docs.realitydefender.com/api-reference/quickstart
+- type: GettingStarted
+  url: https://docs.realitydefender.com/sdks/quickstart
+- type: Support
+  url: https://intercom.help/reality-defender/en/
+- type: Blog
+  url: https://www.realitydefender.com/blog
+- type: GitHubOrganization
+  url: https://github.com/Reality-Defender
+- type: SignUp
+  url: https://app.realitydefender.ai/
+- type: Login
+  url: https://auth.app.realitydefender.ai/
+- type: PrivacyPolicy
+  url: https://www.realitydefender.com/t-c/privacy-policy
+- type: TermsOfService
+  url: https://www.realitydefender.com/terms
+- type: TrustCenter
+  url: https://trust.realitydefender.com/
+- type: Packages
+  url: packages/reality-defender-packages.yml
+- type: SDKs
+  url: packages/reality-defender-packages.yml
+- type: MCPServer
+  url: mcp/reality-defender-mcp.yml
+- type: LLMsTxt
+  url: llms/reality-defender-llms.txt
+- type: WellKnown
+  url: well-known/reality-defender-well-known.yml
+- type: Authentication
+  url: authentication/reality-defender-authentication.yml
+- type: Conventions
+  url: conventions/reality-defender-conventions.yml
+- type: ErrorCatalog
+  url: errors/reality-defender-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/reality-defender-lifecycle.yml
+- type: Conformance
+  url: conformance/reality-defender-conformance.yml
+- type: DataModel
+  url: data-model/reality-defender-data-model.yml
+- type: AgentSkill
+  url: skills/_index.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1

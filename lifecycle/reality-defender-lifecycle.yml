@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.realitydefender.com/api-reference/quickstart
+versioning:
+  api:
+    scheme: unversioned-path
+    notes: REST paths under api.prd.realitydefender.xyz carry no version segment.
+  sdks:
+    scheme: semver
+    notes: Client SDKs are independently SemVer-versioned (see packages/).
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: >
+    No public deprecation policy or RFC 8594 Sunset/Deprecation header support
+    documented. The API reference notes the raw REST flow is de-emphasized in
+    favor of the SDKs, but no formal deprecation schedule is published.
+status_page: null
+sla:
+  url: null
+  notes: Enterprise SLAs are handled via sales/contract; no public status page or uptime target found.
+trust_center: https://trust.realitydefender.com/
+deprecated_operations: []
