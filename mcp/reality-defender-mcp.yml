@@ -5,22 +5,31 @@ source: https://github.com/Reality-Defender/eng-mcp-server
 server:
   name: Reality Defender MCP Server
   repo: https://github.com/Reality-Defender/eng-mcp-server
-  transport: [stdio, streamable-http]
+  transport:
+  - stdio
+  - streamable-http
   distribution: source
-  install: "git clone https://github.com/Reality-Defender/eng-mcp-server.git && uv sync"
-  run_stdio: "uv run ./src/reality_defender_mcp_server/mcp_server.py"
-  run_http: "FASTMCP_HOST=0.0.0.0 FASTMCP_PORT=8000 uv run ./src/reality_defender_mcp_server/mcp_server.py --transport streamable-http"
+  install: git clone https://github.com/Reality-Defender/eng-mcp-server.git && uv sync
+  run_stdio: uv run ./src/reality_defender_mcp_server/mcp_server.py
+  run_http: FASTMCP_HOST=0.0.0.0 FASTMCP_PORT=8000 uv run ./src/reality_defender_mcp_server/mcp_server.py
+    --transport streamable-http
   auth:
     env: REALITY_DEFENDER_API_KEY
     per_request_header: X-Api-Key
   framework: FastMCP
 tools:
-  - name: reality_defender_generate_upload_url
-    description: Generate a unique upload URL for user file submissions.
-    source_operation: POST /api/files/aws-presigned
-  - name: reality_defender_get_file_info
-    description: Retrieve metadata / detection results about an uploaded file.
-    source_operation: GET /api/media/users/{request_id}
-  - name: reality_defender_request_file_analysis
-    description: Analyze a file for AI generation / manipulation using the Reality Defender API.
-    source_operation: POST /api/files/aws-presigned
+- name: reality_defender_generate_upload_url
+  description: Generate a unique upload URL for user file submissions.
+  source_operation: POST /api/files/aws-presigned
+- name: reality_defender_get_file_info
+  description: Retrieve metadata / detection results about an uploaded file.
+  source_operation: GET /api/media/users/{request_id}
+- name: reality_defender_request_file_analysis
+  description: Analyze a file for AI generation / manipulation using the Reality Defender API.
+  source_operation: POST /api/files/aws-presigned
+deployment:
+  mode: local-stdio
+  verified: searched
+  tools: 3
+  checked: '2026-08-12'
+  source: catalog MCP census
