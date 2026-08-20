@@ -43,6 +43,16 @@ tags:
 - Security
 - Fraud Prevention
 - Synthetic Media
+- Machine-Learning
+tags_raw:
+- Company
+- Deepfake Detection
+- Artificial Intelligence
+- Media Authentication
+- Content Moderation
+- Security
+- Fraud Prevention
+- Synthetic Media
 - Machine Learning
 apis:
 - name: Reality Defender Detection API
