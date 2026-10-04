@@ -54,7 +54,7 @@ tags:
 - Security
 - Fraud Prevention
 - Synthetic Media
-- Machine-Learning
+- Machine Learning
 tags_raw:
 - Company
 - Deepfake Detection
@@ -65,6 +65,7 @@ tags_raw:
 - Fraud Prevention
 - Synthetic Media
 - Machine Learning
+- Machine-Learning
 apis:
 - name: Reality Defender Detection API
   description: >-
